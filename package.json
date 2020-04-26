@@ -1,0 +1,31 @@
+{
+  "name": "Scrypter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp",
+    "nodemon": "nodemon node index.js",
+    "dev": "concurrently \"npm run gulp\" \"npm run nodemon\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loscarepapa/Scrypter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loscarepapa/Scrypter/issues"
+  },
+  "homepage": "https://github.com/loscarepapa/Scrypter#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "gulp": "^4.0.2",
+    "gulp-stylus": "^2.7.0",
+    "nodemon": "^2.0.3"
+  }
+}
