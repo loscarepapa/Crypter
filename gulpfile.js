@@ -1,5 +1,5 @@
-const { src, dest } = require('gulp');
-var stylus = require('gulp-syulus');
+const { src, dest, watch } = require('gulp');
+var stylus = require('gulp-stylus');
 
 function html(){
     return src('src/*.html')
@@ -7,11 +7,15 @@ function html(){
 }
 
 function css(){
-    return src('src/*.html')
-        .pipe(dest('public/'));
+    return src('styles/*.styl')
+        .pipe(stylus({
+            compress: true
+        }))
+        .pipe(dest('public/styles'));
 }
 
 exports.default = function() {
-  return src('src/*.html')
-    .pipe(dest('public/'));
+    watch('src/*.html', html);
+    // Or a composed task
+    watch('styles/*.styl', css);
 }
