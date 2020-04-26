@@ -15,6 +15,10 @@ function css(){
 }
 
 exports.default = function() {
+
+    html();
+    css();
+
     watch('src/*.html', html);
     // Or a composed task
     watch('styles/*.styl', css);
