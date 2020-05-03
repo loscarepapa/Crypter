@@ -3,7 +3,7 @@ var stylus = require('gulp-stylus');
 
 function html(){
     return src('src/*.html')
-        .pipe(dest('public/'));
+        .pipe(dest('public/'))
 }
 
 function css(){
@@ -11,15 +11,17 @@ function css(){
         .pipe(stylus({
             compress: true
         }))
-        .pipe(dest('public/styles'));
+        .pipe(dest('public/styles/'))
 }
 
+function watchFiles(){
+    watch('src/*.html', html);
+    watch('styles/*.styl', css);
+}
+exports.html = html;
+exports.css = css;
 exports.default = function() {
-
     html();
     css();
-
-    watch('src/*.html', html);
-    // Or a composed task
-    watch('styles/*.styl', css);
+    watchFiles();
 }
